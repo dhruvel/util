@@ -3,8 +3,8 @@
 # ORB-SLAM2 Installation Script for Ubuntu 24.04 (Noble) with ROS2 Jazzy
 # Improved version with proper version control and 4-core optimization
 # This script installs ORB-SLAM2 and all its dependencies with specific versions
-# Usage: curl -sSL https://your-server.com/install_orb_slam2.sh | bash
-# Or: wget -O - https://your-server.com/install_orb_slam2.sh | bash
+# Usage: curl -sSL https://raw.githubusercontent.com/dhruvel/util/refs/heads/main/orb_slam2_install.sh | bash
+# Or: wget -O - https://raw.githubusercontent.com/dhruvel/util/refs/heads/main/orb_slam2_install.sh | bash
 
 set -e  # Exit on any error
 
