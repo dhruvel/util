@@ -108,7 +108,6 @@ sudo apt install -y \
     libcanberra-gtk3-module \
     python3-dev \
     python3-numpy \
-    libtbb12-dev \
     libtbb-dev \
     libdc1394-dev \
     libxine2-dev \
@@ -116,7 +115,6 @@ sudo apt install -y \
     v4l-utils \
     libgstreamer1.0-dev \
     libgstreamer-plugins-base1.0-dev \
-    libavresample-dev \
     libvorbis-dev \
     libxvidcore-dev \
     libx264-dev \
