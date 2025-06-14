@@ -130,31 +130,31 @@ sudo apt install -y \
     libatlas-base-dev \
     libsuitesparse-dev
 
-# Install ROS2 Jazzy if not already installed
-if ! command_exists ros2; then
-    print_status "Installing ROS2 Jazzy..."
+# # Install ROS2 Jazzy if not already installed
+# if ! command_exists ros2; then
+#     print_status "Installing ROS2 Jazzy..."
     
-    # Add ROS2 repository
-    sudo apt install -y software-properties-common
-    sudo add-apt-repository universe -y
-    sudo apt update
+#     # Add ROS2 repository
+#     sudo apt install -y software-properties-common
+#     sudo add-apt-repository universe -y
+#     sudo apt update
     
-    # Add ROS2 GPG key
-    sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+#     # Add ROS2 GPG key
+#     sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
     
-    # Add ROS2 repository
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+#     # Add ROS2 repository
+#     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
     
-    sudo apt update
-    sudo apt install -y ros-jazzy-desktop python3-argcomplete
+#     sudo apt update
+#     sudo apt install -y ros-jazzy-desktop python3-argcomplete
     
-    # Source ROS2
-    echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
-    source /opt/ros/jazzy/setup.bash
-else
-    print_status "ROS2 already installed, sourcing environment..."
-    source /opt/ros/jazzy/setup.bash
-fi
+#     # Source ROS2
+#     echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
+#     source /opt/ros/jazzy/setup.bash
+# else
+#     print_status "ROS2 already installed, sourcing environment..."
+#     source /opt/ros/jazzy/setup.bash
+# fi
 
 # Install additional ROS2 packages
 print_status "Installing ROS2 development tools..."
