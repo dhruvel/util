@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Exit on error
-set -e
-
 echo "Starting ORB-SLAM2 installation for Ubuntu 24.04 and ROS2 Jazzy..."
 
 # Update system
