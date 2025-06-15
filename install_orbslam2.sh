@@ -64,4 +64,4 @@ cmake .. -DROS_BUILD_TYPE=Release
 make -j$(nproc)
 
 echo "Installation complete! Please source your .bashrc file:"
-echo "source ~/.bashrc"
+echo "source ~/.bashrc" 
