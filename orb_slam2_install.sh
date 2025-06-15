@@ -37,9 +37,9 @@ sudo pip3 install wheel setuptools
 # Install Pangolin (visualization library)
 echo "Installing Pangolin..."
 cd ~
+sudo rm -rf Pangolin
 git clone https://github.com/stevenlovegrove/Pangolin.git
 cd Pangolin
-git checkout 0a3c9c0
 
 # Create build directory and build
 mkdir build && cd build
