@@ -25,7 +25,7 @@ sudo apt install -y ros-jazzy-desktop
 # Install ORB-SLAM2 dependencies
 echo "Installing ORB-SLAM2 dependencies..."
 sudo apt install -y build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
-sudo apt install -y libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libglew-dev libboost-all-dev libssl-dev
+sudo apt install -y libtbb-dev libjpeg-dev libpng-dev libtiff-dev libglew-dev libboost-all-dev libssl-dev
 
 # Install Pangolin (visualization library)
 echo "Installing Pangolin..."
