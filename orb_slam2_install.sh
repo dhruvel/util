@@ -39,14 +39,11 @@ echo "Installing Pangolin..."
 cd ~
 git clone https://github.com/stevenlovegrove/Pangolin.git
 cd Pangolin
-git checkout 86eb4975fc4fc8b5d92148c2e370045ae9bf9e5d
+git checkout 0a3c9c0
 
-# Apply patch for missing cstdint header
-echo "Applying fixes for Pangolin..."
-sed -i '10i #include <cstdint>' components/pango_image/src/image_io_jpg.cpp
-
+# Create build directory and build
 mkdir build && cd build
-cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_EXAMPLES=OFF -DBUILD_TESTS=OFF -DBUILD_TOOLS=OFF -DBUILD_PANGOLIN_PYTHON=OFF ..
+cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_EXAMPLES=OFF -DBUILD_TESTS=OFF -DBUILD_TOOLS=OFF -DBUILD_PANGOLIN_PYTHON=OFF -DBUILD_PANGOLIN_GUI=ON -DBUILD_PANGOLIN_VARS=ON -DBUILD_PANGOLIN_VIDEO=ON ..
 make -j$(nproc)
 sudo make install
 
