@@ -54,6 +54,7 @@ sudo apt install -y libeigen3-dev
 # Install ORB-SLAM2
 echo "Installing ORB-SLAM2..."
 cd ~
+sudo rm -rf ORB_SLAM2
 git clone https://github.com/raulmur/ORB_SLAM2.git
 cd ORB_SLAM2
 chmod +x build.sh
