@@ -26,14 +26,17 @@ sudo apt install -y ros-jazzy-desktop
 echo "Installing ORB-SLAM2 dependencies..."
 sudo apt install -y build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
 sudo apt install -y libtbbmalloc2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libglew-dev libboost-all-dev libssl-dev libepoxy-dev
+sudo apt install -y libgl1-mesa-dev libglu1-mesa-dev libxmu-dev libxi-dev
+sudo apt install -y libxcb-render0-dev libxcb-render-util0-dev libxcb-xkb-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-keysyms1-dev libxcb-randr0-dev libxcb-shape0-dev libxcb-sync-dev libxcb-xfixes0-dev libxcb-xinerama0-dev
 
 # Install Pangolin (visualization library)
 echo "Installing Pangolin..."
 cd ~
 git clone https://github.com/stevenlovegrove/Pangolin.git
 cd Pangolin
+git checkout v0.8
 mkdir build && cd build
-cmake -DCMAKE_BUILD_TYPE=Release ..
+cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_EXAMPLES=OFF -DBUILD_TESTS=OFF -DBUILD_TOOLS=OFF ..
 make -j$(nproc)
 sudo make install
 
