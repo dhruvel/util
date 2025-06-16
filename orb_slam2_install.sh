@@ -6,10 +6,21 @@ echo "Starting ORB-SLAM2 installation for Ubuntu 24.04 and ROS2 Jazzy..."
 echo "Updating system packages..."
 sudo apt update && sudo apt upgrade -y
 
+# Build OpenCV
+sudo apt-get install -y git
+git clone https://github.com/opencv/opencv.git
+cd opencv
+mkdir build
+cd build
+cmake ../
+make -j$(nproc)
+sudo make install
+cd
+
 # Install ROS2 Jazzy dependencies
 echo "Installing ROS2 Jazzy dependencies..."
 sudo apt install -y software-properties-common
-sudo add-apt-repository universe
+sudo add-apt-repository universe -y
 sudo apt update && sudo apt install -y curl
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
@@ -26,10 +37,10 @@ sudo apt install -y libtbbmalloc2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev 
 sudo apt install -y libgl1-mesa-dev libglu1-mesa-dev libxmu-dev libxi-dev
 sudo apt install -y libxcb-render0-dev libxcb-render-util0-dev libxcb-xkb-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-keysyms1-dev libxcb-randr0-dev libxcb-shape0-dev libxcb-sync-dev libxcb-xfixes0-dev libxcb-xinerama0-dev
 
-# Install Python development packages
-echo "Installing Python development packages..."
-sudo apt install -y python3-dev python3-pip
-sudo pip3 install wheel setuptools
+# Install Python development packages and OpenCV
+echo "Installing Python development packages and OpenCV..."
+sudo apt install -y python3-dev python3-full python3-pip python3-wheel python3-setuptools python3-opencv
+sudo apt install -y libopencv-dev libopencv-highgui-dev libopencv-imgproc-dev libopencv-video-dev
 
 # Install Pangolin (visualization library)
 echo "Installing Pangolin..."
